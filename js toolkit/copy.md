@@ -26,3 +26,26 @@ javaScript中的拷贝
         return copied;
     }
     ```
+## js中实现深拷贝的方法
+1. 利用JSON.stringify()和JSON.parse()
+    ```
+    /**
+     *如果对象中有函数，JSON序列化会将其解析为undefined；
+     *循环引用时无法正确实现深拷贝
+     *如果对象中有NaN,Infinity和-Infinity时,会将其解析为null
+    */
+    function deepClone(obj){
+       let json = JSON.stringify(obj);
+       let newObj = JSON.parse(json);
+       return newObj;
+    }
+    ```
+    保证JSON安全
+2. 利用迭代
+  ```
+   //没有循环引用的情况
+   function deepClone(obj){
+       if(obj)
+       for(let i = 0;i < obj.leng>)
+   }
+  ```
